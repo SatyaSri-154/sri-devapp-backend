@@ -6,16 +6,16 @@ pipeline {
    environment {
         //scannerHome = tool "sonar_scanner"
                //This can be nexus 3 or Nexus 2
-        NEXUS_VERSION= "nexus"
+        //NEXUS_VERSION= "nexus"
         //This can be http or https
-        NEXUS_PROTOCOL= "http"
+        //NEXUS_PROTOCOL= "http"
         //Where your Nexus is running
-        NEXUS_URL= "http://nexus.sri.devapp.com:8081"
+        //NEXUS_URL= "http://nexus.sri.devapp.com:8081"
         // Repository Name where we will upload the artifacts
-        NEXUS_REPOSITORY= "sridevapp-mvn-repo"
+        //NEXUS_REPOSITORY= "sridevapp-mvn-repo"
         // Jenkins credentials id to authenticate to Nexus OSS
-        NEXUS_CREDENTIAL_ID= "nexus_creds"
-        REGISTRY_URL="nexus.sri.devapp.com:7777"
+        //NEXUS_CREDENTIAL_ID= "nexus_creds"
+        REGISTRY_URL="lakshmisatya"
         REPO_NAME="sri-devapp-repo"
         IMAGE_NAME="sri-devapp-backend"
         IMAGE_TAG="latest"
@@ -58,7 +58,7 @@ pipeline {
         stage('Login to Nexus Repo') {
             steps {
             script {
-                sh "docker login -u admin -p admin ${REGISTRY_URL}"
+                sh "docker login"
             }
         }
     }
