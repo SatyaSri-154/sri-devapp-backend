@@ -6,19 +6,6 @@
 	<artifactId>sridevapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<distributionManagement>
-	
-		<repository>
-			<id>nexus</id>
-			
-			<url>https://nexus.sri.devapp.com/repository/sridevapp-mvn-repo/</url>
-		</repository>
-		
-		<snapshotRepository>
-			<id>nexus</id>
-		       <url>https://nexus.sri.devapp.com/repository/sridevapp-mvn-repo/</url>
-		</snapshotRepository>
-	</distributionManagement>
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<finalName>sridevapp</finalName>
