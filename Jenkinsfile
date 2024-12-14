@@ -70,11 +70,18 @@ pipeline {
             }
         }
     }
-    	stage('Pushing to Nexus') {
+    	stage('Pushing to dockerhub') {
 		    steps{
 		    script {
                 sh "docker tag ${IMAGE_NAME}:${IMAGE_TAG} ${REGISTRY_URL}/${IMAGE_NAME}:$IMAGE_TAG"
                 sh "docker push ${REGISTRY_URL}/${IMAGE_NAME}:$IMAGE_TAG"
+			}
+		  }
+		}
+    	stage('deploy to k8s') {
+		    steps{
+		    script {
+                	sh "kubectl apply -f backend.yaml -n frontend"	
 			}
 		  }
 		}
