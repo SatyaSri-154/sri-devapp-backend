@@ -7,6 +7,12 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<build>
+	<distributionManagement>
+        <repository>
+            <id>my-local-repo</id>
+            <url>file://${project.basedir}/local-repo</url> <!-- Local repository path -->
+        </repository>
+     </distributionManagement>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<finalName>sridevapp</finalName>
 		<plugins>
